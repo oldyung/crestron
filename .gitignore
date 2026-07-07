@@ -1,0 +1,6 @@
+node_modules/
+dist/
+*.ch5z
+*.ch5
+.DS_Store
+Thumbs.db

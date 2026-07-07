@@ -1,0 +1,271 @@
+<section id="page1-page" class="details-container" aria-labelledby="Main">
+    <!-- BEGIN::CHANGEAREA - your page html markup goes here -->
+
+    <!-- ==================== PAGE: LOGO/STARTUP (Full Screen) ==================== -->
+    <div id="page-logo" class="page active">
+        <div class="logo-full-content">
+            <div class="logo-full-brand">Logo</div>
+            <div class="logo-full-room">Demo Room</div>
+            <button class="logo-system-on-btn" onclick="page1Module.systemOn()">System On</button>
+        </div>
+    </div>
+
+    <!-- ==================== PAGE: HOME ==================== -->
+    <div id="page-home" class="page">
+        <div class="page-header">
+            <div class="logo-text">Logo</div>
+            <div class="page-title">Select the Mode</div>
+            <div class="header-spacer"></div>
+        </div>
+        <div class="mode-selection">
+            <button class="mode-btn" onclick="page1Module.navigateTo('page-presentation')">
+                <div class="mode-icon">
+                    <svg viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="15" y="5" width="50" height="35" rx="2" fill="none" stroke="#333" stroke-width="3"/>
+                        <rect x="30" y="40" width="20" height="5" fill="#333"/>
+                        <circle cx="20" cy="55" r="6" fill="#333"/>
+                        <circle cx="40" cy="55" r="6" fill="#333"/>
+                        <circle cx="60" cy="55" r="6" fill="#333"/>
+                        <circle cx="55" cy="20" r="8" fill="#333"/>
+                        <path d="M 50 28 L 45 40 L 65 40 Z" fill="#333"/>
+                    </svg>
+                </div>
+                <span class="mode-label">Presentation Mode</span>
+            </button>
+            <button class="mode-btn" onclick="page1Module.navigateTo('page-vc')">
+                <div class="mode-icon">
+                    <svg viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="20" y="30" width="60" height="25" rx="2" fill="#333"/>
+                        <circle cx="25" cy="25" r="8" fill="#333"/>
+                        <path d="M 25 33 L 25 50" stroke="#333" stroke-width="4"/>
+                        <circle cx="50" cy="25" r="8" fill="#333"/>
+                        <path d="M 50 33 L 50 50" stroke="#333" stroke-width="4"/>
+                        <circle cx="75" cy="25" r="8" fill="#333"/>
+                        <path d="M 75 33 L 75 50" stroke="#333" stroke-width="4"/>
+                    </svg>
+                </div>
+                <span class="mode-label">VC Mode</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- ==================== PAGE: PRESENTATION MODE ==================== -->
+    <div id="page-presentation" class="page">
+        <div class="page-header">
+            <div class="logo-text">Logo</div>
+            <div class="page-title">Presentation Mode</div>
+            <button class="back-btn" onclick="page1Module.navigateTo('page-home')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+            </button>
+        </div>
+        <div class="content-area">
+            <div class="tv-panel">
+                <div class="panel-title">Demo Room TV</div>
+                <div class="source-display">
+                    <div class="source-icon">
+                        <svg viewBox="0 0 24 24" fill="#666">
+                            <rect x="2" y="4" width="20" height="14" rx="1" fill="none" stroke="#666" stroke-width="2"/>
+                            <rect x="8" y="18" width="8" height="2" fill="#666"/>
+                        </svg>
+                    </div>
+                    <span id="pres-source-text">No Source</span>
+                </div>
+                <div class="source-buttons">
+                    <button class="source-btn" onclick="page1Module.selectSource('pres', 'Demo Room Room PC')">Demo Room<br>Room PC</button>
+                    <button class="source-btn" onclick="page1Module.selectSource('pres', 'Demo Room HDMI')">Demo Room<br>HDMI</button>
+                    <button class="source-btn" onclick="page1Module.selectSource('pres', 'Demo Room ClickShare')">Demo Room<br>ClickShare</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== PAGE: VC MODE ==================== -->
+    <div id="page-vc" class="page">
+        <div class="page-header">
+            <div class="logo-text">Logo</div>
+            <div class="page-title">VC Mode</div>
+            <button class="back-btn" onclick="page1Module.navigateTo('page-home')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+            </button>
+        </div>
+        <div class="content-area">
+            <div class="tv-panel">
+                <div class="panel-title">Content Share</div>
+                <div class="source-display">
+                    <div class="source-icon">
+                        <svg viewBox="0 0 24 24" fill="#666">
+                            <rect x="2" y="4" width="20" height="14" rx="1" fill="none" stroke="#666" stroke-width="2"/>
+                            <path d="M8 10l4-4 4 4" stroke="#666" stroke-width="2" fill="none"/>
+                            <path d="M12 6v8" stroke="#666" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <span id="vc-source-text">No Source</span>
+                </div>
+                <div class="source-buttons">
+                    <button class="source-btn" onclick="page1Module.selectSource('vc', 'Demo Room Room PC')">Demo Room<br>Room PC</button>
+                    <button class="source-btn" onclick="page1Module.selectSource('vc', 'Demo Room HDMI')">Demo Room<br>HDMI</button>
+                    <button class="source-btn" onclick="page1Module.selectSource('vc', 'Demo Room ClickShare')">Demo Room<br>ClickShare</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== OVERLAY: MIC CONTROL ==================== -->
+    <div id="overlay-mic" class="overlay overlay-full" style="display: none;" onclick="page1Module.closeOverlayFromBackdrop(event, 'overlay-mic')">
+        <div class="overlay-panel mic-panel">
+            <div class="overlay-header">Ceiling Mic</div>
+            <button class="close-btn" onclick="event.stopPropagation(); page1Module.closeOverlay('overlay-mic')">&#x2715;</button>
+            <button class="mute-btn" onclick="page1Module.toggleMicMute()">MUTE</button>
+        </div>
+    </div>
+
+    <!-- ==================== OVERLAY: VOLUME CONTROL ==================== -->
+    <div id="overlay-volume" class="overlay overlay-full" style="display: none;" onclick="page1Module.closeOverlayFromBackdrop(event, 'overlay-volume')">
+        <div class="overlay-panel volume-panel">
+            <div class="overlay-header">Volume</div>
+            <button class="close-btn" onclick="event.stopPropagation(); page1Module.closeOverlay('overlay-volume')">&#x2715;</button>
+            <div class="volume-controls">
+                <button class="vol-btn" onclick="page1Module.volumeUp()">
+                    <svg viewBox="0 0 24 24" fill="white">
+                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/>
+                        <path d="M19 12l3-3v6l-3-3z"/>
+                    </svg>
+                    <span class="vol-label">+</span>
+                </button>
+                <div class="volume-slider">
+                    <div class="slider-track">
+                        <div class="slider-fill" id="volume-fill"></div>
+                        <div class="slider-thumb" id="volume-thumb"></div>
+                    </div>
+                </div>
+                <button class="vol-btn" onclick="page1Module.volumeDown()">
+                    <svg viewBox="0 0 24 24" fill="white">
+                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/>
+                    </svg>
+                    <span class="vol-label">-</span>
+                </button>
+            </div>
+            <button class="mute-btn" onclick="page1Module.toggleVolMute()">MUTE</button>
+        </div>
+    </div>
+
+    <!-- ==================== OVERLAY: BLINDS CONTROL ==================== -->
+    <div id="overlay-blinds" class="overlay overlay-full" style="display: none;" onclick="page1Module.closeOverlayFromBackdrop(event, 'overlay-blinds')">
+        <div class="overlay-panel blinds-panel">
+            <div class="overlay-header">Blinds</div>
+            <button class="close-btn" onclick="event.stopPropagation(); page1Module.closeOverlay('overlay-blinds')">&#x2715;</button>
+            <div class="blinds-controls">
+                <button class="blind-btn" onclick="page1Module.blindsControl('up')">Up</button>
+                <button class="blind-btn" onclick="page1Module.blindsControl('stop')">Stop</button>
+                <button class="blind-btn" onclick="page1Module.blindsControl('down')">Down</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== OVERLAY: LIGHTING CONTROL ==================== -->
+    <div id="overlay-lighting" class="overlay overlay-full" style="display: none;" onclick="page1Module.closeOverlayFromBackdrop(event, 'overlay-lighting')">
+        <div class="overlay-panel lighting-panel">
+            <div class="overlay-header">Lighting</div>
+            <button class="close-btn" onclick="event.stopPropagation(); page1Module.closeOverlay('overlay-lighting')">&#x2715;</button>
+            <div class="lighting-controls">
+                <div class="light-group">
+                    <button class="light-btn" onclick="page1Module.lightingControl('led', 'on')">LED<br>On</button>
+                    <button class="light-btn active" onclick="page1Module.lightingControl('led', 'off')">LED<br>Off</button>
+                </div>
+                <div class="light-group">
+                    <button class="light-btn" onclick="page1Module.lightingControl('downlight', 'on')">Downlight<br>On</button>
+                    <button class="light-btn" onclick="page1Module.lightingControl('downlight', 'off')">Downlight<br>Off</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== OVERLAY: EQUIPMENT CONTROL ==================== -->
+    <div id="overlay-equipment" class="overlay overlay-full" style="display: none;" onclick="page1Module.closeOverlayFromBackdrop(event, 'overlay-equipment')">
+        <div class="overlay-panel equipment-panel">
+            <div class="overlay-header-center">Equipment Control</div>
+            <button class="close-btn" onclick="event.stopPropagation(); page1Module.closeOverlay('overlay-equipment')">&#x2715;</button>
+            <div class="equipment-controls">
+                <div class="equipment-card">
+                    <div class="equipment-title">Demo Room TV</div>
+                    <button class="equip-btn power-on" onclick="page1Module.equipmentControl('tv', 'on')">Power On</button>
+                    <button class="equip-btn power-off" onclick="page1Module.equipmentControl('tv', 'off')">Power Off</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== PAGE: SYSTEM OFF CONFIRMATION ==================== -->
+    <div id="page-system-off" class="page">
+        <div class="system-off-overlay">
+            <div class="system-off-panel">
+                <div class="system-off-header">System Off</div>
+                <div class="system-off-confirm-text">Are you sure you want to turn off the system?</div>
+                <div class="system-off-buttons">
+                    <button class="system-off-btn system-off-yes" onclick="page1Module.systemOffConfirm(true)">Yes</button>
+                    <button class="system-off-btn system-off-no" onclick="page1Module.systemOffConfirm(false)">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== BOTTOM NAVIGATION BAR ==================== -->
+    <div id="bottom-nav" class="bottom-nav" onclick="page1Module.handleNavClick(event)">
+        <button class="nav-btn" data-nav="power" data-action="power">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <path d="M12 2v8"/>
+                <path d="M17.66 6.34A8 8 0 1 1 6.34 6.34"/>
+            </svg>
+            <span>Power</span>
+        </button>
+        <button class="nav-btn" data-nav="mic" data-action="mic">
+            <svg viewBox="0 0 24 24" fill="white">
+                <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/>
+                <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/>
+            </svg>
+            <span>Mic<br>Control</span>
+        </button>
+        <button class="nav-btn" data-nav="volume" data-action="volume">
+            <svg viewBox="0 0 24 24" fill="white">
+                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/>
+            </svg>
+            <span>PC<br>Volume</span>
+        </button>
+        <button class="nav-btn room-btn" data-nav="room">
+            <span class="room-name">Demo Room</span>
+        </button>
+        <button class="nav-btn" data-nav="blinds" data-action="blinds">
+            <svg viewBox="0 0 24 24" fill="white">
+                <rect x="3" y="3" width="18" height="18" rx="1" fill="none" stroke="white" stroke-width="2"/>
+                <line x1="12" y1="3" x2="12" y2="21" stroke="white" stroke-width="2"/>
+                <line x1="3" y1="9" x2="12" y2="9" stroke="white" stroke-width="1.5"/>
+                <line x1="3" y1="15" x2="12" y2="15" stroke="white" stroke-width="1.5"/>
+            </svg>
+            <span>Blinds</span>
+        </button>
+        <button class="nav-btn" data-nav="lighting" data-action="lighting">
+            <svg viewBox="0 0 24 24" fill="white">
+                <path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"/>
+            </svg>
+            <span>Lighting</span>
+        </button>
+        <button class="nav-btn" data-nav="equipment" data-action="equipment">
+            <svg viewBox="0 0 24 24" fill="white">
+                <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.07.62-.07.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
+            </svg>
+            <span>Equipment</span>
+        </button>
+        <button class="nav-btn active" data-nav="home" data-action="home">
+            <svg viewBox="0 0 24 24" fill="white">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+            </svg>
+            <span>Home</span>
+        </button>
+    </div>
+
+    <!-- END::CHANGEAREA -->
+</section>

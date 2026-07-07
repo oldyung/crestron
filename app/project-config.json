@@ -1,0 +1,80 @@
+{
+  "projectName": "sample-layout",
+  "projectType": "shell-template",
+  "version": "0.0.1",
+  "faviconPath": "favicon.ico",
+  "menuOrientation": "none",
+  "selectedTheme": "light-theme",
+  "useWebXPanel": true,
+  "forceDeviceXPanel": false,
+  "themes": [
+    {
+      "name": "light-theme",
+      "brandLogo": {
+        "url": "./app/template/assets/img/ch5-logo-light.svg",
+        "alt": "Logo",
+        "receiveStateUrl": ""
+      }
+    }
+  ],
+  "config": {
+    "controlSystem": {
+      "ipId": "0x03"
+    }
+  },
+  "customSignals": {
+    "receiveStateTheme": "templateTheme",
+    "sendEventTheme": "templateTheme",
+    "receiveStateLanguage": "templateLanguage",
+    "sendEventLanguage": "templateLanguage"
+  },
+  "header": {
+    "display": false,
+    "displayInfo": false,
+    "displayTheme": false,
+    "diagnostics": {
+      "logs": {
+        "logAfterProjectLoad": true,
+        "receiveStateLogDiagnostics": "",
+        "logDiagnostics": "none"
+      }
+    },
+    "$component": ""
+  },
+  "footer": {
+    "display": false,
+    "$component": ""
+  },
+  "content": {
+    "$defaultView": "page1",
+    "triggerViewProperties": {
+      "gestureable": false,
+      "disableAnimation": true
+    },
+    "pages": [
+      {
+        "pageName": "page1",
+        "fullPath": "./app/project/components/pages/page1/",
+        "fileName": "page1.html",
+        "preloadPage": true,
+        "cachePage": false,
+        "standAloneView": false,
+        "navigation": {
+          "sequence": 1,
+          "label": "main",
+          "isI18nLabel": false,
+          "iconClass": "fas fa-home",
+          "iconUrl": "",
+          "iconPosition": "bottom"
+        },
+        "animation": {
+          "transitionIn": "",
+          "transitionOut": "",
+          "transitionDuration": "0s",
+          "transitionDelay": "0s"
+        }
+      }
+    ],
+    "widgets": []
+  }
+}

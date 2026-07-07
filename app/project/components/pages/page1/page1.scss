@@ -1,0 +1,755 @@
+#page1-page {
+    // BEGIN::CHANGEAREA - your page level styles go here
+
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(135deg, #f0f0f0 0%, #e8e8e8 50%, #f5f5f5 100%);
+
+    /* Geometric background pattern */
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: 
+            linear-gradient(45deg, transparent 48%, #ffffff 48%, #ffffff 52%, transparent 52%),
+            linear-gradient(-45deg, transparent 48%, #ffffff 48%, #ffffff 52%, transparent 52%);
+        background-size: 100px 100px;
+        opacity: 0.3;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    /* ==================== PAGE BASE ==================== */
+    .page {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1920px;
+        height: 1080px;
+        display: none;
+        z-index: 1;
+    }
+
+    .page.active {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* ==================== HEADER ==================== */
+    .page-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 50px;
+        height: 120px;
+    }
+
+    .logo-text {
+        font-size: 28px;
+        font-weight: bold;
+        color: #333;
+        letter-spacing: 2px;
+    }
+
+    .page-title {
+        font-size: 48px;
+        font-weight: 300;
+        color: #000;
+        text-align: center;
+        flex: 1;
+        border-bottom: 2px solid #ccc;
+        padding-bottom: 10px;
+    }
+
+    .header-spacer {
+        width: 150px;
+    }
+
+    .back-btn {
+        width: 60px;
+        height: 60px;
+        background: #333;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.3s;
+    }
+
+    .back-btn:hover {
+        background: #555;
+    }
+
+    /* ==================== LOGO PAGE (FULL SCREEN) ==================== */
+    #page-logo {
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #2c3e50 0%, #1a1a2e 50%, #16213e 100%);
+    }
+
+    .logo-full-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 60px;
+        z-index: 1;
+    }
+
+    .logo-full-brand {
+        font-size: 140px;
+        font-weight: bold;
+        color: #fff;
+        letter-spacing: 12px;
+        text-transform: uppercase;
+        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .logo-full-room {
+        font-size: 40px;
+        font-weight: 300;
+        color: rgba(255, 255, 255, 0.7);
+        letter-spacing: 6px;
+    }
+
+    .logo-system-on-btn {
+        font-size: 36px;
+        font-weight: 400;
+        color: #fff;
+        background: #4a90d9;
+        border: none;
+        border-radius: 16px;
+        padding: 30px 100px;
+        cursor: pointer;
+        letter-spacing: 4px;
+        transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+        box-shadow: 0 8px 30px rgba(74, 144, 217, 0.4);
+        margin-top: 40px;
+    }
+
+    .logo-system-on-btn:hover {
+        background: #357abd;
+        transform: scale(1.05);
+        box-shadow: 0 12px 40px rgba(74, 144, 217, 0.6);
+    }
+
+    /* ==================== HOME PAGE ==================== */
+    .mode-selection {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 150px;
+        flex: 1;
+    }
+
+    .mode-btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        background: rgba(255, 255, 255, 0.9);
+        border: 2px solid #ddd;
+        border-radius: 20px;
+        padding: 80px 120px;
+        cursor: pointer;
+        transition: all 0.3s;
+        min-width: 500px;
+    }
+
+    .mode-btn:hover {
+        background: #fff;
+        border-color: #4a90d9;
+        transform: scale(1.05);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .mode-icon {
+        width: 150px;
+        height: 120px;
+    }
+
+    .mode-icon svg {
+        width: 100%;
+        height: 100%;
+    }
+
+    .mode-label {
+        font-size: 32px;
+        font-weight: 300;
+        color: #333;
+        letter-spacing: 2px;
+    }
+
+    /* ==================== CONTENT AREA ==================== */
+    .content-area {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .tv-panel {
+        background: #d4c4a8;
+        border-radius: 20px;
+        padding: 60px 80px;
+        min-width: 900px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .panel-title {
+        font-size: 36px;
+        font-weight: 300;
+        color: #000;
+        margin-bottom: 40px;
+        text-align: center;
+        letter-spacing: 2px;
+    }
+
+    .source-display {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        margin-bottom: 60px;
+        padding: 30px;
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 12px;
+    }
+
+    .source-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .source-icon svg {
+        width: 100%;
+        height: 100%;
+    }
+
+    .source-display span {
+        font-size: 32px;
+        font-weight: 300;
+        color: #333;
+        letter-spacing: 1px;
+    }
+
+    .source-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 60px;
+    }
+
+    .source-btn {
+        background: rgba(255, 255, 255, 0.8);
+        border: 2px solid #bbb;
+        border-radius: 12px;
+        padding: 30px 40px;
+        font-size: 24px;
+        font-weight: 400;
+        color: #333;
+        cursor: pointer;
+        transition: all 0.3s;
+        text-align: center;
+        letter-spacing: 1px;
+        line-height: 1.4;
+    }
+
+    .source-btn:hover {
+        background: #fff;
+        border-color: #4a90d9;
+        transform: scale(1.05);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .source-btn.active {
+        background: #4a90d9;
+        color: #fff;
+        border-color: #4a90d9;
+    }
+
+    /* ==================== OVERLAYS ==================== */
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1920px;
+        height: 1080px;
+        z-index: 100;
+        background: rgba(0, 0, 0, 0.6);
+    }
+
+    .overlay-full {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .overlay-panel {
+        background: #fff;
+        border-radius: 20px;
+        box-shadow: 0 10px 60px rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+        max-width: 600px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        width: 50px;
+        height: 50px;
+        background: #c0392b;
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        font-size: 24px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s;
+        z-index: 10;
+    }
+
+    .close-btn:hover {
+        background: #a93226;
+        transform: scale(1.1);
+    }
+
+    .mic-panel,
+    .volume-panel {
+        min-width: 400px;
+        max-width: 450px;
+    }
+
+    .blinds-panel {
+        min-width: 400px;
+        max-width: 450px;
+        min-height: 500px;
+    }
+
+    .lighting-panel {
+        min-width: 600px;
+        max-width: 800px;
+        min-height: 500px;
+    }
+
+    .equipment-panel {
+        min-width: 400px;
+        max-width: 500px;
+        min-height: 400px;
+    }
+
+    .overlay-header,
+    .overlay-header-center {
+        background: #333;
+        color: #fff;
+        font-size: 32px;
+        font-weight: 300;
+        padding: 30px 50px;
+        letter-spacing: 2px;
+        text-align: center;
+        padding-top: 80px;
+    }
+
+    .overlay-header-center {
+        font-size: 36px;
+        letter-spacing: 3px;
+    }
+
+    /* ==================== MIC PANEL ==================== */
+    .mute-btn {
+        display: block;
+        width: calc(100% - 100px);
+        margin: 30px auto;
+        padding: 20px;
+        font-size: 24px;
+        font-weight: 400;
+        color: #fff;
+        background: #4a90d9;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        letter-spacing: 2px;
+        transition: all 0.3s;
+    }
+
+    .mute-btn:hover {
+        background: #357abd;
+        transform: scale(1.02);
+    }
+
+    .mute-btn.active {
+        background: #c0392b;
+    }
+
+    /* ==================== VOLUME PANEL ==================== */
+    .volume-controls {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 30px;
+        gap: 30px;
+    }
+
+    .vol-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 160px;
+        height: 60px;
+        background: #4a90d9;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+    .vol-btn:hover {
+        background: #357abd;
+        transform: scale(1.05);
+    }
+
+    .vol-btn svg {
+        width: 40px;
+        height: 40px;
+        margin-right: 15px;
+    }
+
+    .vol-label {
+        font-size: 32px;
+        font-weight: bold;
+        color: #fff;
+    }
+
+    .volume-slider {
+        width: 60px;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .slider-track {
+        width: 10px;
+        height: 100%;
+        background: #ddd;
+        border-radius: 5px;
+        position: relative;
+    }
+
+    .slider-fill {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 60%;
+        background: #4a90d9;
+        border-radius: 5px;
+    }
+
+    .slider-thumb {
+        position: absolute;
+        left: 50%;
+        bottom: 60%;
+        width: 30px;
+        height: 30px;
+        background: #fff;
+        border: 3px solid #4a90d9;
+        border-radius: 50%;
+        transform: translate(-50%, 50%);
+        cursor: pointer;
+    }
+
+    /* ==================== BLINDS PANEL ==================== */
+    .blinds-controls {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 40px;
+    }
+
+    .blind-btn {
+        width: calc(100% - 80px);
+        height: 100px;
+        font-size: 28px;
+        font-weight: 400;
+        color: #333;
+        background: rgba(212, 196, 168, 0.6);
+        border: 2px solid #bbb;
+        border-radius: 16px;
+        cursor: pointer;
+        transition: all 0.3s;
+        letter-spacing: 2px;
+    }
+
+    .blind-btn:hover {
+        background: #4a90d9;
+        color: #fff;
+        border-color: #4a90d9;
+        transform: scale(1.02);
+    }
+
+    /* ==================== LIGHTING PANEL ==================== */
+    .lighting-controls {
+        display: flex;
+        gap: 40px;
+        padding: 40px;
+        justify-content: center;
+    }
+
+    .light-group {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .light-btn {
+        width: 200px;
+        height: 100px;
+        font-size: 22px;
+        font-weight: 400;
+        color: #333;
+        background: rgba(212, 196, 168, 0.6);
+        border: 2px solid #bbb;
+        border-radius: 16px;
+        cursor: pointer;
+        transition: all 0.3s;
+        letter-spacing: 1px;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .light-btn:hover {
+        background: #4a90d9;
+        color: #fff;
+        border-color: #4a90d9;
+        transform: scale(1.05);
+    }
+
+    .light-btn.active {
+        background: #4a90d9;
+        color: #fff;
+        border-color: #4a90d9;
+    }
+
+    /* ==================== EQUIPMENT PANEL ==================== */
+    .equipment-controls {
+        padding: 40px;
+    }
+
+    .equipment-card {
+        background: #d4c4a8;
+        border-radius: 16px;
+        padding: 40px;
+    }
+
+    .equipment-title {
+        font-size: 28px;
+        font-weight: 300;
+        color: #000;
+        margin-bottom: 40px;
+        text-align: center;
+        letter-spacing: 2px;
+    }
+
+    .equip-btn {
+        display: block;
+        width: calc(100% - 40px);
+        margin: 0 auto 20px;
+        padding: 20px;
+        font-size: 24px;
+        font-weight: 400;
+        color: #fff;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        letter-spacing: 2px;
+        transition: all 0.3s;
+    }
+
+    .equip-btn:hover {
+        transform: scale(1.02);
+    }
+
+    .power-on {
+        background: #4a90d9;
+    }
+
+    .power-on:hover {
+        background: #357abd;
+    }
+
+    .power-off {
+        background: #c0392b;
+    }
+
+    .power-off:hover {
+        background: #a93226;
+    }
+
+    /* ==================== SYSTEM OFF CONFIRMATION PAGE ==================== */
+    #page-system-off {
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.7);
+    }
+
+    .system-off-overlay {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .system-off-panel {
+        background: #fff;
+        border-radius: 24px;
+        box-shadow: 0 20px 80px rgba(0, 0, 0, 0.5);
+        padding: 80px 100px;
+        text-align: center;
+        max-width: 700px;
+        width: 90%;
+    }
+
+    .system-off-header {
+        font-size: 48px;
+        font-weight: 300;
+        color: #c0392b;
+        letter-spacing: 3px;
+        margin-bottom: 30px;
+    }
+
+    .system-off-confirm-text {
+        font-size: 28px;
+        font-weight: 300;
+        color: #333;
+        margin-bottom: 60px;
+        letter-spacing: 1px;
+    }
+
+    .system-off-buttons {
+        display: flex;
+        gap: 40px;
+        justify-content: center;
+    }
+
+    .system-off-btn {
+        font-size: 32px;
+        font-weight: 400;
+        color: #fff;
+        border: none;
+        border-radius: 16px;
+        padding: 25px 80px;
+        cursor: pointer;
+        letter-spacing: 3px;
+        transition: all 0.3s;
+        min-width: 200px;
+    }
+
+    .system-off-btn:hover {
+        transform: scale(1.05);
+    }
+
+    .system-off-yes {
+        background: #c0392b;
+        box-shadow: 0 6px 20px rgba(192, 57, 43, 0.4);
+    }
+
+    .system-off-yes:hover {
+        background: #a93226;
+        box-shadow: 0 8px 30px rgba(192, 57, 43, 0.6);
+    }
+
+    .system-off-no {
+        background: #555;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .system-off-no:hover {
+        background: #777;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    /* ==================== BOTTOM NAVIGATION ==================== */
+    .bottom-nav {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 1920px;
+        height: 120px;
+        background: #555;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 0 40px;
+        z-index: 200;
+    }
+
+    .nav-btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        background: transparent;
+        border: none;
+        color: #aaa;
+        cursor: pointer;
+        transition: all 0.3s;
+        padding: 15px 25px;
+        border-radius: 12px;
+        min-width: 120px;
+    }
+
+    .nav-btn:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-btn.active {
+        color: #4a90d9;
+        background: rgba(74, 144, 217, 0.2);
+    }
+
+    .nav-btn svg {
+        width: 40px;
+        height: 40px;
+    }
+
+    .nav-btn span {
+        font-size: 16px;
+        font-weight: 300;
+        text-align: center;
+        line-height: 1.2;
+        letter-spacing: 1px;
+    }
+
+    .room-btn {
+        min-width: 180px;
+    }
+
+    .room-name {
+        font-size: 20px;
+        font-weight: 400;
+        color: #fff;
+        letter-spacing: 2px;
+    }
+
+    .bottom-nav.hide-nav {
+        display: none;
+    }
+
+    // END::CHANGEAREA
+}
